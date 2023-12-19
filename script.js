@@ -48,3 +48,16 @@ const form = document.querySelector("form"),
     checkEmail();
     createPass();
     confirmPass();
+     //calling function on key up
+  emailInput.addEventListener("keyup", checkEmail);
+  passInput.addEventListener("keyup", createPass);
+  cPassInput.addEventListener("keyup", confirmPass);
+
+  if (
+    !emailField.classList.contains("invalid") &&
+    !passField.classList.contains("invalid") &&
+    !cPassField.classList.contains("invalid")
+  ) {
+    location.href = form.getAttribute("action");
+  }
+});
