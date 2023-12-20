@@ -35,3 +35,16 @@ const form = document.querySelector("form"),
     }
     passField.classList.remove("invalid"); //removing invalid class if password input value matched with passPattern
   }
+  function confirmPass() {
+    if (passInput.value !== cPassInput.value || cPassInput.value === "") {
+      return cPassField.classList.add("invalid");
+    }
+    cPassField.classList.remove("invalid");
+  }
+  
+  // Calling Funtion on Form Sumbit
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); //preventing form submitting
+    checkEmail();
+    createPass();
+    confirmPass();
