@@ -27,3 +27,11 @@ const form = document.querySelector("form"),
       pInput.type = "password";
     });
   });
+  function createPass() {
+    const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  
+    if (!passInput.value.match(passPattern)) {
+      return passField.classList.add("invalid"); //adding invalid class if password input value do not match with passPattern
+    }
+    passField.classList.remove("invalid"); //removing invalid class if password input value matched with passPattern
+  }
